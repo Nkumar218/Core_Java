@@ -1,8 +1,8 @@
-package com.lara8;
+package com.lara2;
 
 import java.util.Arrays;
 
-public class Anagram 
+public class Anagram
 {
 	static void isAnagram(String s1, String s2)
 	{
@@ -15,24 +15,25 @@ public class Anagram
 		}
 		else
 		{
-			char[] c1 = st1.toLowerCase().toCharArray();
-			char[] c2 = st2.toLowerCase().toCharArray();
-			Arrays.sort(c1);
-			Arrays.sort(c2);
-			flag = Arrays.equals(c1, c2);
+			char[] arra1 = st1.toLowerCase().toCharArray();
+			char[] arra2 = st2.toLowerCase().toCharArray();
+			Arrays.sort(arra1);
+			Arrays.sort(arra2); 
+			flag = Arrays.equals(arra1, arra2);
 		}
 		if(flag)
 		{
-			System.out.println(st1+" and "+st2+" anagrams");
+			System.out.println(st1+"  and "+st2+" anagrams");
 		}
 		else
 		{
-			System.out.println(st1+" and "+st2+" is not anagrams");
+			System.out.println(st1+" and "+st2+" not anagrams");
 		}
 	}
-	public static void main(String[] args) 
+	public static void main(String[] args)
 	{
-		isAnagram("CAT", "ACT");
-		isAnagram("Hello to All", "Welcome to  all");
+		isAnagram("cat", "act");
+		
+		isAnagram("mother in Law", "Hitler in Law");
 	}
 }

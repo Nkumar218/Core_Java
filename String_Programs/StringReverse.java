@@ -1,21 +1,49 @@
-package com.lara8;
+package com.lara2;
 
-import java.util.Scanner;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
-public class StringReverse 
-{
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("enter String");
-		String s1 = sc.nextLine();
-		char[] c1 = s1.toCharArray();
-		int size = c1.length;
-		for(int i = 0; i < size/2; i++)
-		{
-			char temp = c1[i];
-			c1[i] = c1[size - i -1];
-			c1[size - i -1] = temp;
-		}
-		System.out.println(c1);
-	}
+public class StringReverse {
+
+    public static void main(String args[]) throws FileNotFoundException, IOException {
+
+        //original string
+        String str = "Sony is going to introduce Internet TV soon";
+        System.out.println("Original String: " + str);
+
+        //reversed string using Stringbuffer
+        String reverseStr = new StringBuffer(str).reverse().toString();
+        System.out.println("Reverse String in Java using StringBuffer: " + reverseStr);
+
+        //iterative method to reverse String in Java
+        reverseStr = reverse(str);
+        System.out.println("Reverse String in Java using Iteration: " + reverseStr);
+
+        //recursive method to reverse String in Java
+        reverseStr = reverseRecursively(str);
+        System.out.println("Reverse String in Java using Recursion: " + reverseStr);
+
+    }
+
+    public static String reverse(String str) {
+        StringBuilder strBuilder = new StringBuilder();
+        char[] strChars = str.toCharArray();
+
+        for (int i = strChars.length - 1; i >= 0; i--) {
+            strBuilder.append(strChars[i]);
+        }
+
+        return strBuilder.toString();
+    }
+
+    public static String reverseRecursively(String str) {
+
+        //base case to handle one char string and empty string
+        if (str.length() < 2) {
+            return str;
+        }
+
+        return reverseRecursively(str.substring(1)) + str.charAt(0);
+
+    }
 }

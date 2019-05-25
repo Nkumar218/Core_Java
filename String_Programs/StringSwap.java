@@ -1,15 +1,20 @@
-package com.lara.String;
+package com.lara2;
 
 public class StringSwap 
 {
 	public static void main(String[] args)
 	{
-		String s1 = "hello1";
-		String s2 = "hello2";
-		System.out.println("Before Swapping : s1="+s1+" and "+s2);
-		s1 = s1 + s2;
-		s2 = s1.substring(0, s1.length()-s2.length());
-		s1 = s1.substring(s2.length());
-		System.out.println("Before Swapping : s1="+s1+" and "+s2);
+		String a = "hello";
+		String b = "brother";
+		System.out.println("Before Swaping : a =>"+a +", b=> "+b);
+		a = a + b;
+		b = a.substring(0, a.length()-b.length());
+		a = a.substring(b.length());
+		System.out.println("After swapping : a =>"+a +",  b=>"+b);
+		
 	}
 }
+
+/*Before Swaping : a =>hello, b=> brother
+After swapping : a =>brother,  b=>hello
+*/

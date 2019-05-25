@@ -1,17 +1,11 @@
-package com.lara8;
-
-import java.util.Scanner;
+package com.lara2;
 
 public class StringDemo
 {
-	public static void main(String[] args) 
+	public static void main(String[] args)
 	{
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter String");
-		String s1 = sc.nextLine();
-		for(int i = s1.length()-1; i >= 0 ; i--)
-		{
-			System.out.print(s1.charAt(i));
-		}
+		String s1="java string split method by javatpoint";  
+		System.out.println(s1.startsWith("ja"));  //true
+		System.out.println(s1.startsWith("java string"));  //true
 	}
 }

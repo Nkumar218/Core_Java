@@ -1,31 +1,29 @@
-package com.lara8;
+package com.lara2;
 
-import java.util.Scanner;
-
+import java.util.*;
 public class VowelCount 
 {
-	public static void main(String[] args) 
+	public static void main(String args[])
 	{
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter some thing");
-		String input = sc.nextLine();
+		System.out.println("Please enter some text");
+		Scanner reader = new Scanner(System.in); 
+		String input = reader.nextLine(); 
 		char[] letters = input.toCharArray();
 		int count = 0;
-		for(char c : letters)
+		for (char c : letters) 
 		{
 			switch (c)
 			{
 			case 'a':
-			case 'e':
+			case 'e': 
 			case 'i':
-			case 'o':
+			case 'o': 
 			case 'u':
-				count++;
-				break;
-			default:
-				//break;
-			}
+			count++; 
+			break; 
+			default: // no count increment
+				 }
 		}
-		System.out.println("number of vowels in String "+count);
+			System.out.println("Number of vowels in String [" + input + "] is : " + count); 
 	}
 }

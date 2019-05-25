@@ -1,28 +1,27 @@
-package com.lara.String;
+package com.lara2;
 
 import java.util.LinkedHashSet;
 import java.util.Scanner;
 
 public class RemoveDuplicateChar 
 {
-	static void removeChar(String s)
+	public static void removeChar(String s)
 	{
-		char[] ch1 = s.toCharArray();
-		LinkedHashSet<Character> set = new LinkedHashSet<Character>();
-		for(char i = 0; i < ch1.length; i++)
+		LinkedHashSet<Character> duplicate = new LinkedHashSet<Character>();
+		for(int i = 0; i < s.length(); i++)
 		{
-			set.add(ch1[i]);
+			duplicate.add(s.charAt(i));
 		}
-		for(Character c : set)
+		for(Character ch : duplicate)
 		{
-			System.out.print(c);
+			System.out.print(ch);
 		}
 	}
-	public static void main(String[] args)
+	public static void main(String[] args) 
 	{
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter String");
-		String s1 = sc.nextLine();
-		removeChar(s1);
+		String st = sc.nextLine();
+		removeChar(st);
 	}
 }

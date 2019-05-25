@@ -1,85 +1,88 @@
-package com.lara8;
+package com.lara2;
 
-import java.util.LinkedList;
-public class Producer_Consumer 
+class Util
 {
-	public static class PC
+	static void sleep(long millis)
 	{
-		LinkedList<Integer> list = new LinkedList<>();
-		int capacity = 2;
-		public void produce() throws InterruptedException
+		try
 		{
-			int value = 0;
-			while(true)
-			{
-				synchronized (this) 
-				{
-					while(list.size() == capacity)
-					{
-						wait();
-					}
-					System.out.println("Producer produced:"+value);
-					list.add(value++);
-					notify();
-					Thread.sleep(1000);
-				}
-			}
+			Thread.sleep(1000);
 		}
-		public void consume() throws InterruptedException
+		catch(InterruptedException ex)
 		{
-
-			while(true)
-			{
-				synchronized (this) 
-				{
-					while(list.size() == 0)
-					{
-						wait();
-					}
-					int value = list.removeFirst();
-					System.out.println("Consumer consumed:"+value);
-					notify();
-					Thread.sleep(1000);
-				}
-			}
+			ex.printStackTrace();
 		}
 	}
-	public static void main(String[] args) throws InterruptedException
+}
+class A
+{
+	
+}
+class Consumer implements Runnable
+{
+	A obj;
+	public Consumer(A obj) 
 	{
-		final PC pc = new PC();
-		Thread t1 = new Thread(new Runnable() 
-		{	
-			@Override
-			public void run()
+		this.obj = obj;
+	}
+	public void run() 
+	{
+		System.out.println("Thread1 begin");
+		synchronized (obj)
+		{
+			try
 			{
-				try
-				{
-					pc.produce();
-				}
-				catch(InterruptedException e)
-				{
-					e.printStackTrace();
-				}
+				obj.wait();
 			}
-		});
-		Thread t2 = new Thread(new Runnable() 
-		{	
-			@Override
-			public void run()
+			catch(InterruptedException ex)
 			{
-				try
-				{
-					pc.consume();
-				}
-				catch(InterruptedException e)
-				{
-					e.printStackTrace();
-				}
+				ex.printStackTrace();
 			}
-		});
+		}
+		System.out.println("Thread1 end");
+	}
+}
+class Producer implements Runnable
+{
+	A obj;
+	public Producer(A obj)
+	{
+		this.obj = obj;
+	}
+	public void run() 
+	{
+		System.out.println("Thread1 begin");
+		synchronized (obj)
+		{
+			try
+			{
+				obj.wait();
+			}
+			catch(InterruptedException ex)
+			{
+				ex.printStackTrace();
+			}
+		}
+		System.out.println("Thread1 end");
+	}
+}
+public class Producer_Consumer 
+{
+	public static void main(String[] args) 
+	{
+		A a1 = new A();
+		A a2 = new A();
+		Consumer c1 = new Consumer(a1);
+		Producer c2 = new Producer(a2);
+		Thread t1 = new Thread(c1);
+		Thread t2 = new Thread(c2);
 		t1.start();
 		t2.start();
-		t1.join();
-		t2.join();
+		Util.sleep(1000);
+		System.out.println("After sleep");
+		synchronized(a1)
+		{
+			a1.notifyAll();
+		}
 	}
 }
