@@ -1,33 +1,33 @@
-package com.lara.String;
+package com.lara8;
 
 import java.util.Scanner;
 
 public class StringPalidrome 
 {
-	static String isPalidrome(String s)
+	public static void main(String[] args) 
 	{
-		String rev = "";
-		for(int i = s.length()-1; i >= 0; i--)
+		Scanner sc = new  Scanner(System.in); 
+		System.out.println("Enter string");
+		String original = sc.nextLine();
+		String reverse ="";
+		char[] c1 = original.toCharArray();
+		int length = c1.length;
+		for(int i = length-1; i >= 0; --i)
 		{
-			rev += s.charAt(i); 
+			reverse += original.charAt(i);
 		}
-		if(rev.equalsIgnoreCase(s))
+		if(reverse.equals(original))
 		{
-			System.out.println("Entered String is Palidrome");
+			System.out.println("Entered String is palidrome");
 		}
 		else
 		{
-			System.out.println("Entered String is not palidrome");
+			System.out.println("Entered String is not a palidrome");
 		}
-		return s;
-	}
-	public static void main(String[] args)
-	{
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter String");
-		String s1 = sc.nextLine();
-		isPalidrome(s1);
-		//isPalidrome("hello");
-		
 	}
 }
+/*
+Enter string
+kalak
+Entered String is palidrome
+*/

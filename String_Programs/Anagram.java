@@ -1,10 +1,10 @@
-package com.lara.String;
+package com.lara8;
 
 import java.util.Arrays;
 
 public class Anagram 
 {
-	public static void isAnagram(String s1, String s2)
+	static void isAnagram(String s1, String s2)
 	{
 		String st1 = s1.replaceAll("\\s", "");
 		String st2 = s2.replaceAll("\\s", "");
@@ -23,16 +23,16 @@ public class Anagram
 		}
 		if(flag)
 		{
-			System.out.println(st1+" and "+st2+" is Anagram");
+			System.out.println(st1+" and "+st2+" anagrams");
 		}
 		else
 		{
-			System.out.println(st1+" and "+st2+" is not Anagram");
+			System.out.println(st1+" and "+st2+" is not anagrams");
 		}
 	}
 	public static void main(String[] args) 
 	{
-		isAnagram("DOG", "GOD");
-		isAnagram("helloTo", "Welcome");
+		isAnagram("CAT", "ACT");
+		isAnagram("Hello to All", "Welcome to  all");
 	}
 }

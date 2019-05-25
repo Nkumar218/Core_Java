@@ -1,20 +1,21 @@
-package com.lara.String;
+package com.lara8;
+
 import java.util.Scanner;
-public class StringReverse
+
+public class StringReverse 
 {
-	static String reverse(String s)
-	{
-		for(int i = s.length()-1; i >= 0; i--)
-		{
-			System.out.print(s.charAt(i));
-		}
-		return s;
-	}
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("ENter String");
+		System.out.println("enter String");
 		String s1 = sc.nextLine();
-		reverse(s1);
+		char[] c1 = s1.toCharArray();
+		int size = c1.length;
+		for(int i = 0; i < size/2; i++)
+		{
+			char temp = c1[i];
+			c1[i] = c1[size - i -1];
+			c1[size - i -1] = temp;
+		}
+		System.out.println(c1);
 	}
 }
