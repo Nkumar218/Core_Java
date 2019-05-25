@@ -1,22 +1,22 @@
-package com.lara12;
+package com.lara10;
 
 public class EquilibriumIndex
 {
-	public static int equiIndex(int [] x, int n)
+	int equilibrium(int [] arr, int num)
 	{
-		int leftSum, rightSum;
 		int i, j;
-		for(i = 0; i < x.length; i++)
+		int leftSum, rightSum;
+		for(i = 0; i < num; ++i)
 		{
 			leftSum = 0;
 			rightSum = 0;
 			for(j = 0; j < i; j++)
 			{
-				leftSum += x[j];
+				leftSum += arr[j];
 			}
-			for(j = i+1; j < n; j++)
+			for(j = i + 1; j < num; j++)
 			{
-				rightSum += x[j];
+				rightSum += arr[j];
 			}
 			if(leftSum == rightSum)
 			{
@@ -25,10 +25,11 @@ public class EquilibriumIndex
 		}
 		return -1;
 	}
-	public static void main(String[] args) 
+	public static void main(String[] args)
 	{
-		int [] x = {1, 2, 3, 4, 5, 1};
-		int lenght = x.length;
-		System.out.println(equiIndex(x, lenght));
+		EquilibriumIndex e1 = new EquilibriumIndex();
+		int arr[]  = {-7, 1, 5, 2, -4, 3, 0};
+		int size = arr.length;
+		System.out.println(e1.equilibrium(arr, size));
 	}
 }
