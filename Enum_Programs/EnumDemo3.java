@@ -1,41 +1,24 @@
-package com.lara.Enum;
+package com.lara9;
 
 public class EnumDemo3 
 {
-	enum FRUIT
+	enum DEPARTMENT
 	{
-		GRAPES
+		HR(10), ACCOUNT(20), MANAGER(30);
+		private int id;
+		private DEPARTMENT(int id)
 		{
-			public String toString()
-			{
-				return "Grapes is seasonal fruits and goood for health";
-			}
-		},
-		APPLE
+			this.id = id;
+		}
+		public int getId()
 		{
-			public String toString()
-			{
-				return "Apple is seasonal fruits and goood for health";
-			}
-		},
-		ORANGE
-		{
-			public String toString()
-			{
-				return "Orange is seasonal fruits and goood for health";
-			}
-		},
-		PAPAYA
-		{
-			public String toString()
-			{
-				return "Papaya is all time fruits and goood for health";
-			}
+			return id;
 		}
 	}
-	public static void main(String[] args) 
+	public static void main(String[] args)
 	{
-		System.out.println(FRUIT.APPLE);
-		System.out.println(FRUIT.ORANGE);
+		System.out.println("HR infor :"+DEPARTMENT.HR.getId());
+		System.out.println("ACCOUNT infor :"+DEPARTMENT.ACCOUNT.getId());
+		System.out.println("Manager infor :"+DEPARTMENT.MANAGER.getId());
 	}
 }

@@ -1,16 +1,16 @@
-package com.lara.Enum;
+package com.lara9;
 
-public class EnumDemo
+public class EnumDemo 
 {
-	public enum DIRECTION
+	enum COLOR
 	{
-		NORTH, SOUTH, EAST, WEST
+		RED, GREEN, YELLOW, BLACK
 	}
-	public static void main(String[] args) 
+	public static void main(String[] args)
 	{
-		for(DIRECTION dir : DIRECTION.values())	
+		for(Enum e : COLOR.values())
 		{
-			System.out.println(dir);
+			System.out.println(e);
 		}
 	}
 }

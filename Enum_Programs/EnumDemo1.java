@@ -1,39 +1,41 @@
-package com.lara.Enum;
+package com.lara9;
 
 public class EnumDemo1 
 {
-	enum FRUITS
+	enum Fruits
 	{
-		MANGO, APPLE, ORANGE, LEMON, PINEAPPLE,GUAVA, GRAPES
+		APPLE, ORANGE, PINEAPPLE, GUAVA, GRAPE
 	}
-	
-	private FRUITS fruits;
-	private EnumDemo1(FRUITS fruit) 
+	private Fruits fruits;
+	public EnumDemo1(Fruits myfruits) 
 	{
-		this.fruits = fruit;
+		this.fruits = myfruits;
 	}
 	public void getFruits()
 	{
-		switch(fruits)
+		switch (fruits) 
 		{
-		case GRAPES:
-			System.out.println("Grapes");
-			break;
 		case APPLE:
-			System.out.println("Apple");
+			System.out.println("Apple is a seasonable fruits");
+			break;
+		case GRAPE:
+			System.out.println("Grape is healthy for humen");
+			break;
+		case ORANGE:
+			System.out.println("Orange is a jousy fruits");
 			break;
 		default:
-			System.out.println("invalid");
+			System.out.println("Not Available");
 			break;
 		}
 	}
 	public static void main(String[] args)
 	{
-		EnumDemo1 e1 = new EnumDemo1(FRUITS.APPLE);
+		EnumDemo1 e1 = new EnumDemo1(Fruits.APPLE);
 		e1.getFruits();
-		EnumDemo1 e2 = new EnumDemo1(FRUITS.GRAPES);
+		EnumDemo1 e2 = new EnumDemo1(Fruits.GRAPE);
 		e2.getFruits();
-		EnumDemo1 e3 = new EnumDemo1(FRUITS.MANGO);
+		EnumDemo1 e3 = new EnumDemo1(Fruits.GUAVA);
 		e3.getFruits();
 	}
 }

@@ -1,23 +1,23 @@
 package com.lara9;
 
-public class M1 
+public class MergeArray 
 {
-	public static void main(String[] args)
+	public static void main(String[] args) 
 	{
-		int []x1 = {1, 3, 5, 7, 9};
-		int [] x2 = {2, 4, 6, 8};
-		int [] result = merge(x1, x2);
+		int [] array1 = {10, 20, 30, 31};
+		int [] array2 = {15, 25, 35, 40};
+		int [] result = merge(array1, array2);
 		for(int i = 0; i < result.length; i++)
 		{
-			System.out.print(result[i]+",");
+			System.out.print(result[i]+", ");
 		}
 	}
-	static int[] merge(int[] x1, int[] x2)
+	public static int[] merge(int [] x1, int [] x2)
 	{
 		int length1 = x1.length;
-		int length2 = x2.length;
-		int result[] = new int[length1+length2];
-		int i = 0, j = 0;
+		int length2 = x1.length;
+		int result[] = new int[length1 + length2];
+		int i = 0, j= 0;
 		for(int k = 0; k < (length1+length2); k++)
 		{
 			if(i >= length1)
