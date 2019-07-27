@@ -5,7 +5,7 @@ package com.dsa;
 //Now traverse both the lists at the same time 
 //check whether nodes are same, if yes then we have found the intersection point 
 //if we reach the end of the link lists then there is no intersection point. 
-
+//code contribute by @Niranjan
 
 public class FindIntersectionOfLinkedLists  
 {
