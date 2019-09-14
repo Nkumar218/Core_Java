@@ -1,0 +1,9 @@
+Servlets are Java specific but RESTful web services are not.
+Servlets are API but RESTful is not.
+RESTful web service can use Servlets as there implementation but vice versa is not true.
+Servlets can run in Servlet container only but RESTful services can run in web container as well.
+RESTful talks about Resources/Entities/Verbs and gives you more Specific way to use the services i.e 
+There is clear explanation on the usage of HTTP verbs.
+Request handling in both is totally different e.g. Servlets are multi-threaded inherently but RESTful services are not.
+If you want to share the RESTful services with other teams/client/public to consume there are plenty of
+Document tools which can generate documentation for your REST services (e.g swagger) but you won’t find that kind of documentation tools with Servlets.
