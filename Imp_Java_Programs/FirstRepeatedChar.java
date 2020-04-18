@@ -5,38 +5,28 @@ import java.util.Scanner;
 
 public class FirstRepeatedChar 
 {
-	static Character repeatedChar(String s1)
+	static Character repeatCahr(String s1)
 	{
-		LinkedHashMap<Character, Integer> map = new LinkedHashMap<>();
-		Character ch;
-		for(int i = 0; i < s1.length(); i++)
-		{
-			ch = s1.charAt(i);
-			if(map.containsKey(ch))
+		char [] ch1 = s1.toCharArray();
+		 HashSet<Character> set = new HashSet<>(); 
+		for(int i = 0; i < ch1.length; i++){
+			char ch2 = ch1[i];
+			if(set.contains(ch2))
 			{
-				map.put(ch, map.get(ch)+1);
+				return ch2;
 			}
 			else
 			{
-				map.put(ch, 1);
+				set.add(ch2);
 			}
 		}
-		for(int i = 0; i < s1.length(); i++)
-		{
-			ch = s1.charAt(i);
-			if(map.get(ch)== 1)
-			{
-				return ch;
-			}
-		}
-		return null;
+		return '\0';
 	}
-	public static void main(String[] args) 
-	{
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter String");
-		String s = sc.nextLine();
-		char ch1 = repeatedChar(s);
-		System.out.println(ch1);
+	public static void main(String[] args) {
+		String str = "geeksforgeeks"; 
+        System.out.println(repeatCahr(str));
+        
+        String str1 = "HelloAll"; 
+        System.out.println(repeatCahr(str1));
 	}
 }
